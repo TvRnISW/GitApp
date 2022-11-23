@@ -8,8 +8,7 @@ import javax.inject.Inject
 
 class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi) {
 
-    suspend fun getRepoData(gitRepoResponse: GitRepoResponse){
-        val response = gitRepoApi.getGitRepo("android")
-        Log.d(TAG, "getRepoData: ${response.body().toString()}")
+    suspend fun getRepoData(){
+        val response = gitRepoApi.getGitRepo()
     }
 }

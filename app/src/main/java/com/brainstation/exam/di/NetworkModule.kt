@@ -23,6 +23,8 @@ class NetworkModule {
             .build()
     }
 
+    @Singleton
+    @Provides
     fun provideGitRepoAPI(retrofit: Retrofit):GitRepoApi{
         return retrofit.create(GitRepoApi::class.java)
     }
