@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 is NetworkResult.Success -> {
                     binding.progressBar.visibility = View.INVISIBLE
-                    Log.d(TAG, "onCreate: ${it.data}")
+                    Log.d(TAG, "onCreate: ${it.data?.items?.size}")
                 }
             }
         }
