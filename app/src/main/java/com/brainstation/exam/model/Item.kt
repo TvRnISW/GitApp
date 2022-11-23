@@ -16,7 +16,7 @@ data class Item(
     val labels: List<Label>,
     val labels_url: String,
     val locked: Boolean,
-    val milestone: Any,
+    val milestone: Milestone,
     val node_id: String,
     val number: Int,
     val performed_via_github_app: Any,

@@ -1,11 +1,9 @@
 package com.brainstation.exam.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.brainstation.exam.api.GitRepoApi
 import com.brainstation.exam.model.GitRepoResponse
-import com.brainstation.exam.utils.Constant.TAG
 import com.brainstation.exam.utils.NetworkResult
 import javax.inject.Inject
 
