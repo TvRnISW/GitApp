@@ -11,14 +11,15 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class GitRepoViewModel @Inject constructor(private val gitRepoRepository: GitRepoRepository): ViewModel() {
+class GitRepoViewModel @Inject constructor(private val gitRepoRepository: GitRepoRepository) :
+    ViewModel() {
 
     val gitRepoResponseLiveData: LiveData<NetworkResult<GitRepoResponse>>
-    get() = gitRepoRepository.gitRepoResponse
+        get() = gitRepoRepository.gitRepoResponse
 
-    fun getRepoData(){
+    fun getRepoData(searchQuery: String, sort: String, order: String, per_page: String) {
         viewModelScope.launch {
-            gitRepoRepository.getRepoData()
+            gitRepoRepository.getRepoData(searchQuery, sort, order, per_page)
         }
     }
 

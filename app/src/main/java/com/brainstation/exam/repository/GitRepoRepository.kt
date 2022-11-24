@@ -5,21 +5,28 @@ import androidx.lifecycle.MutableLiveData
 import com.brainstation.exam.api.GitRepoApi
 import com.brainstation.exam.model.GitRepoResponse
 import com.brainstation.exam.utils.NetworkResult
+import org.json.JSONObject
+import retrofit2.Response
 import javax.inject.Inject
 
 class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi) {
 
     private val _gitRepoResponseLiveData = MutableLiveData<NetworkResult<GitRepoResponse>>()
-    val gitRepoResponse : LiveData<NetworkResult<GitRepoResponse>> get() = _gitRepoResponseLiveData
+    val gitRepoResponse: LiveData<NetworkResult<GitRepoResponse>> get() = _gitRepoResponseLiveData
 
-    suspend fun getRepoData(){
+    suspend fun getRepoData(searchQuery: String, sort: String, order: String, per_page: String) {
         _gitRepoResponseLiveData.postValue(NetworkResult.Loading())
-        val response = gitRepoApi.getGitRepo()
-        if (response.isSuccessful){
+        val response = gitRepoApi.getGitRepo(searchQuery, sort, order, per_page)
+        handleResponse(response)
+    }
+
+    private fun handleResponse(response: Response<GitRepoResponse>) {
+        if (response.isSuccessful) {
             _gitRepoResponseLiveData.postValue(NetworkResult.Success(response.body()!!))
-        }else if (response.errorBody() != null){
-            _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
-        }else{
+        } else if (response.errorBody() != null) {
+            val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
+            _gitRepoResponseLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
+        } else {
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
         }
     }

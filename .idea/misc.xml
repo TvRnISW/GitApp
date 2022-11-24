@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Flutter_Projects/Walton_Inventory_Management/GitApp/app/src/main/res/layout/activity_main.xml" value="0.17604166666666668" />
+        <entry key="..\:/Flutter_Projects/Walton_Inventory_Management/GitApp/app/src/main/res/drawable/item_background.xml" value="0.1835" />
+        <entry key="..\:/Flutter_Projects/Walton_Inventory_Management/GitApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Flutter_Projects/Walton_Inventory_Management/GitApp/app/src/main/res/layout/repo_item.xml" value="0.175" />
       </map>
     </option>
   </component>
