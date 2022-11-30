@@ -1,5 +1,9 @@
 package com.brainstation.exam.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "tblrepo")
 data class Item(
     val active_lock_reason: Any,
     val assignee: Any,
@@ -12,6 +16,7 @@ data class Item(
     val created_at: String,
     val events_url: String,
     val html_url: String,
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
     val labels: List<Label>,
     val labels_url: String,
