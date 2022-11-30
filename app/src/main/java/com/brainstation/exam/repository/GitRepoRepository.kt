@@ -22,6 +22,7 @@ class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi) 
         }else if (response.errorBody() != null){
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
         }else{
+            // This is big new feature
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
         }
     }
