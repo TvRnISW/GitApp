@@ -38,6 +38,7 @@ class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi, 
             val errorObj = JSONObject(response.errorBody()!!.charStream().readText())
             _gitRepoResponseLiveData.postValue(NetworkResult.Error(errorObj.getString("message")))
         } else {
+            // This is big new feature
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
         }
     }
