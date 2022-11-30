@@ -26,6 +26,11 @@ class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi) 
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
             // another comment
             Log.d(TAG, "getRepoData: ")
+            Log.d(TAG, "getRepoData: ")
+            Log.d(TAG, "getRepoData: ")
+            Log.d(TAG, "getRepoData: ")
+            Log.d(TAG, "getRepoData: ")
+            Log.d(TAG, "getRepoData: ")
         }
     }
 }
