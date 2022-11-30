@@ -40,6 +40,8 @@ class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi, 
         } else {
             // This is big new feature
             _gitRepoResponseLiveData.postValue(NetworkResult.Error("Something went wrong!"))
+            // another comment
+            Log.d(TAG, "getRepoData: ")
         }
     }
 }
