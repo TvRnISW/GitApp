@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModel
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        Toast.makeText(applicationContext,"This is message",Toast.LENGTH_LONG).show()
 
         gitRepoViewModel.getRepoData("android","created","asc+","10")
 
