@@ -26,7 +26,7 @@ class GitRepoRepository @Inject constructor(private val gitRepoApi: GitRepoApi, 
            val response = gitRepoApi.getGitRepo(searchQuery, sort, order, per_page)
            handleResponse(response)
        }else{
-           //_gitRepoResponseLiveData.postValue(NetworkResult.Success(database.repoDao().getRepoDataFromRoom()))
+           _gitRepoResponseLiveData.postValue(NetworkResult.Loading())
        }
     }
 

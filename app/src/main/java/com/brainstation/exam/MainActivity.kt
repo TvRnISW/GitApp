@@ -40,10 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-
         binding.recyclerRepoList.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         binding.recyclerRepoList.adapter = adapter
-
 
         gitRepoViewModel.gitRepoResponseLiveData.observe(this){
             binding.progressBar.isVisible = false

@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tblrepo")
 data class Item(
-    val active_lock_reason: Any,
-    val assignee: Any,
+    val active_lock_reason: String,
+    val assignee: String,
     val assignees: List<Any>,
     val author_association: String,
     val body: String,
